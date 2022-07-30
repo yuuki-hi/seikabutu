@@ -11,10 +11,18 @@
 
     </head>
     <body>
-        <form action="/post" method="post">
-            <div><input type="text" name="title"></div>
-            <div><textarea name="detail"></textarea></div>
+        <form action="/posts" method="post">
+            @csrf
+            <div>
+                <h2>Title</h2>
+                <input type="text" name="post[title]">
+            </div>
+            <div>
+                <h2>Body</h2>
+                <textarea name="post[body]"></textarea>
+            </div>
             <div><input type="submit" value="保存する"></div>
         </form>
+        <div class="back">[<a href="/">back</a>]</div>
     </body>
 </html>
